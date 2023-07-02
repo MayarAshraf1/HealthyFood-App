@@ -1,0 +1,79 @@
+﻿@model List<ShoppingBagItem>;
+@{
+    ViewData["Title"] = "GetShoppingBagView";
+}
+
+
+
+<form asp-action="AddToCart" asp-controller="Product" method="post">
+    <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <h1 class="display-3 mb-3 animated slideInDown">Shopping Bag</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a class="text-body">Home</a></li>
+                    <li class="breadcrumb-item text-dark active" aria-current="page">Shopping Bag</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+   
+    <div class="container-fluid bg-light bg-icon py-6 mb-0">
+        <div class="container">
+            <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 1000px;">
+                <div>
+                    <h1 class="display-5">Your Bag Has</h1>
+                </div>
+                <br />
+                <div class="row">
+                    <table class="table table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th scope="col">Serial Number</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Product Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total Price</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.ProductName</td>
+                                    <td>@item.ProductPrice $</td>
+                                    @*<td><center><input type="number" class="form-control" style="width:70px" min="1" value="@item.ProductQuantity" data-item-id="@item.Id" onchange="UpdateQuantity('@item.Id')" id="quantity-@item.Id" /></center></td>*@
+                                    <td>@item.ProductQuantity</td>
+                                    <td id="total-price-@item.Id">
+                                        @(item.ProductPrice * item.ProductQuantity) $
+                                    </td>
+                                    <td><button class="btn btn-secondary" asp-action="DeleteProduct" asp-controller="ShoppingBag" asp-route-Id="@item.Id">Delete</button></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <h4 class="mt-3">
+                        Total Orders Price $
+                        @(Model.Select(item => item.ProductPrice * item.ProductQuantity).Sum())
+                    </h4>
+                </div>
+               
+              
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  

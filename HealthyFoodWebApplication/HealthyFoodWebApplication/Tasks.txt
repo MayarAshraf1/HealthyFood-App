@@ -1,0 +1,32 @@
+﻿
+Project Tasks:
+
+First Task: (Assigned to Sara)
+	- Implementing the "Add Prodcut" page, then implementing the "Products" page.
+	- Implementing the three "Filtration" tabs in the "Products" page.
+	- Making a short video explaining the website functionalities.
+
+Second Task: (Assigned to Mayar)
+	- Implementing "When clicking on the 'Add to cart' link of any product card in the 'Products' page,
+	  a ShoppingBagItem should be recorded in the database, then displayed in the shopping bag page upon loading it".
+	- Implementing "When increasing the product quantity, then the 'Total Price' of this single item should increase,
+	  and the 'Total Order Prices' of all orders in this page, should also increase". (Using Ajax).
+
+Third Task: (Assigned to Aliaa')
+	- Implementing "When a user submits his orders, these orders should be saved in the database with the their data
+	  and displayed in the 'Orders' page to the system admin in the given format; notice: Here you should make use of
+	  the relation between the 'Logger' table and the 'ShoppingBagItem' table".
+	- Implementing the message saving "only" of the 'Contact Us' page.
+
+Fourth Task: (Assigned to Mo'men)
+	- Implementing the Registration process with validation, and authentication and authorization,
+	  keeping in mind that:
+		~ Pages: Home, About Us, Products, Services, Pages, Contact Us, Shopping Bag, Login, Registeration WITHOUT THE 'Role' field. (Available to Users).
+		~ Pages: Home, About Us, Add Product, Products, Services, Pages, Orders, Messages, Login, Registration. (Available to Admins).
+
+Fifth Task: (Assigned to Hagar)
+	- Implementing the Login process. (Take the part of the authentication and autorization from the fourth task).
+	- Implementing "When a user sends a message from the 'Contact Us' page, it should be displayed on the 'Messages' page to the Admin".
+	- Making a document containing team members names with their department, group, etc....
+	- Filling the application database with some data, then making a backup of it.
+
